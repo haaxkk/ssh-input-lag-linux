@@ -1,4 +1,4 @@
-# Optymalizacja połączeń SSH na Ubuntu (Eliminacja Input Laga)
+# Optymalizacja połączeń SSH na Linuxie (Eliminacja Input Laga)
 
 Repozytorium zawiera zbiór sprawdzonych rozwiązań problemu wysokiego opóźnienia (input lag) oraz wolnego logowania podczas pracy przez terminal z lokalnego systemu linux na serwery VPS i kontenery LXC (np. Mikr.us).
 
@@ -47,7 +47,7 @@ Repozytorium zawiera zbiór sprawdzonych rozwiązań problemu wysokiego opóźni
    sudo systemctl restart ssh
    ```
 
-> **Uwaga:** W dystrybucjach takich jak CentOS/Arch użyj `sshd` zamiast `ssh`.
+> Uwaga: W dystrybucjach takich jak CentOS/Arch użyj `sshd` zamiast `ssh`.
 
 ## 3. Zastąpienie SSH protokołem Mosh (Mobile Shell)
 
@@ -70,7 +70,7 @@ Repozytorium zawiera zbiór sprawdzonych rozwiązań problemu wysokiego opóźni
 
 ## 4. Konfiguracja Mosh dla niestandardowych portów (Kontenery LXC / Mikr.us)
 
-**Problem:** W środowiskach współdzielonych domyślny port SSH (22) oraz domyślne porty UDP dla Mosh (60000-61000) są niedostępne. Użytkownik posiada jedynie wąską, losowo przydzieloną pulę portów.
+**Problem:** W środowiskach współdzielonych domyślny port SSH (22) oraz domyślne porty UDP dla Mosh (60000-61000) moga być niedostępne. Użytkownik posiada jedynie wąską, losowo przydzieloną pulę portów.
 
 **Rozwiązanie:** Wymuszenie na Mosh użycia konkretnego portu TCP do autoryzacji SSH oraz konkretnego portu UDP z przypisanej puli do właściwej komunikacji.
 
